@@ -60,13 +60,19 @@ extension DogViewController {
     
     private func getDogPic() {
         guard let url = URL(string: dogData.url!) else { return }
+       
+        print("----------")
+        print(url)
+        print("YEAH!")
+        print("----------")
+       
         
         URLSession.shared.dataTask(with: url) { data, response, error in
                     guard let data = data, let response = response else {
                         print(error?.localizedDescription ?? "No error description")
                         return
                     }
-                    print(response)
+//                    print(response)
                     guard let image = UIImage(data: data) else { return }
                     DispatchQueue.main.async {
                         self.dogImage.image = image
