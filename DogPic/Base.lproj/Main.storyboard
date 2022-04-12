@@ -18,33 +18,66 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F6h-Hy-LTj">
                                 <rect key="frame" x="124" y="399" width="166.5" height="98"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Start">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="70"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="start" destination="BYZ-38-t0r" eventType="touchUpInside" id="IlN-8h-qYd"/>
+                                    <segue destination="C0m-Ri-g62" kind="show" id="F15-ip-0vu"/>
+                                </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dog2" translatesAutoresizingMaskIntoConstraints="NO" id="Zfg-jO-T7C">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dog2" translatesAutoresizingMaskIntoConstraints="NO" id="Zfg-jO-T7C">
                                 <rect key="frame" x="256" y="163" width="128" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Zfg-jO-T7C" secondAttribute="height" multiplier="1:1" id="2qW-Ph-2bE"/>
+                                </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dog1" translatesAutoresizingMaskIntoConstraints="NO" id="w5o-11-OlG">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dog1" translatesAutoresizingMaskIntoConstraints="NO" id="w5o-11-OlG">
                                 <rect key="frame" x="20" y="163" width="128" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="w5o-11-OlG" secondAttribute="height" multiplier="1:1" id="Egz-oz-58o"/>
+                                    <constraint firstAttribute="height" constant="128" id="gv8-15-qXr"/>
+                                </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dog1" translatesAutoresizingMaskIntoConstraints="NO" id="ySj-VE-scQ">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dog1" translatesAutoresizingMaskIntoConstraints="NO" id="ySj-VE-scQ">
                                 <rect key="frame" x="266" y="588" width="128" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="kCb-LR-BSb"/>
+                                </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dog2" translatesAutoresizingMaskIntoConstraints="NO" id="16X-qe-r44">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dog2" translatesAutoresizingMaskIntoConstraints="NO" id="16X-qe-r44">
                                 <rect key="frame" x="20" y="588" width="128" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="e64-tK-7Da"/>
+                                </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Special for Polinochka" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="leG-r8-gZv">
+                                <rect key="frame" x="154" y="814" width="230" height="48"/>
+                                <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="F6h-Hy-LTj" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3Yj-2l-tm7"/>
+                            <constraint firstItem="ySj-VE-scQ" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="7oT-he-fpb"/>
+                            <constraint firstItem="16X-qe-r44" firstAttribute="top" secondItem="ySj-VE-scQ" secondAttribute="top" id="BkM-dx-QQl"/>
+                            <constraint firstItem="w5o-11-OlG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="75" id="J61-8t-6hH"/>
+                            <constraint firstItem="16X-qe-r44" firstAttribute="top" secondItem="F6h-Hy-LTj" secondAttribute="bottom" constant="91" id="Vyt-H0-yoi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="leG-r8-gZv" secondAttribute="bottom" id="Z3C-nB-XhF"/>
+                            <constraint firstItem="w5o-11-OlG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ZPr-I9-hWA"/>
+                            <constraint firstItem="w5o-11-OlG" firstAttribute="leading" secondItem="16X-qe-r44" secondAttribute="leading" id="Zyc-J8-vQE"/>
+                            <constraint firstItem="w5o-11-OlG" firstAttribute="trailing" secondItem="16X-qe-r44" secondAttribute="trailing" id="hVS-Dl-CwP"/>
                             <constraint firstItem="F6h-Hy-LTj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="itO-6p-pJN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Zfg-jO-T7C" secondAttribute="trailing" constant="30" id="izw-Sb-DmB"/>
+                            <constraint firstItem="leG-r8-gZv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="154" id="jgp-Qa-zy8"/>
+                            <constraint firstItem="16X-qe-r44" firstAttribute="bottom" secondItem="ySj-VE-scQ" secondAttribute="bottom" id="js8-tx-0V4"/>
+                            <constraint firstItem="w5o-11-OlG" firstAttribute="top" secondItem="Zfg-jO-T7C" secondAttribute="top" id="sR2-aP-uoS"/>
+                            <constraint firstItem="w5o-11-OlG" firstAttribute="bottom" secondItem="Zfg-jO-T7C" secondAttribute="bottom" id="uHG-F9-jya"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="The Dogs! " id="Pxh-bp-OFV"/>
@@ -53,20 +86,44 @@
             </objects>
             <point key="canvasLocation" x="540.57971014492762" y="83.705357142857139"/>
         </scene>
-        <!--View Controller-->
+        <!--Dog View Controller-->
         <scene sceneID="zYz-br-qgN">
             <objects>
-                <viewController id="C0m-Ri-g62" sceneMemberID="viewController">
+                <viewController id="C0m-Ri-g62" customClass="DogViewController" customModule="DogPic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TsM-ct-7cN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r2o-7i-0Qp">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="2Dp-Cv-Gtg">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="pgd-rO-f29"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2Dp-Cv-Gtg" firstAttribute="centerY" secondItem="TsM-ct-7cN" secondAttribute="centerY" id="Wk5-Ty-BeV"/>
+                            <constraint firstItem="2Dp-Cv-Gtg" firstAttribute="centerX" secondItem="TsM-ct-7cN" secondAttribute="centerX" id="eU6-wU-3pJ"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Hsa-Xi-sTj">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="icf-sA-Mex">
+                            <connections>
+                                <action selector="reload:" destination="C0m-Ri-g62" id="tOg-vI-J8M"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="activity" destination="2Dp-Cv-Gtg" id="naA-9V-fFL"/>
+                        <outlet property="dogImage" destination="r2o-7i-0Qp" id="RLt-I0-YQe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tep-2Y-qXD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1349" y="84"/>
+            <point key="canvasLocation" x="1346.376811594203" y="83.705357142857139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="PLm-tV-u90">
