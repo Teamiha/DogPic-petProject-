@@ -15,6 +15,7 @@
 		4EF48F352804E7A600D3907A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EF48F332804E7A600D3907A /* LaunchScreen.storyboard */; };
 		4EF48F3D2804F01F00D3907A /* DogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF48F3C2804F01F00D3907A /* DogViewController.swift */; };
 		4EF48F3F2804F05700D3907A /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF48F3E2804F05700D3907A /* Dog.swift */; };
+		4EFBC2A828078DA300DFB82A /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFBC2A728078DA300DFB82A /* VideoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		4EF48F362804E7A600D3907A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4EF48F3C2804F01F00D3907A /* DogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogViewController.swift; sourceTree = "<group>"; };
 		4EF48F3E2804F05700D3907A /* Dog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dog.swift; sourceTree = "<group>"; };
+		4EFBC2A728078DA300DFB82A /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				4EF48F2C2804E7A500D3907A /* StartViewController.swift */,
 				4EF48F3C2804F01F00D3907A /* DogViewController.swift */,
 				4EF48F3E2804F05700D3907A /* Dog.swift */,
+				4EFBC2A728078DA300DFB82A /* VideoViewController.swift */,
 				4EF48F2E2804E7A500D3907A /* Main.storyboard */,
 				4EF48F312804E7A600D3907A /* Assets.xcassets */,
 				4EF48F332804E7A600D3907A /* LaunchScreen.storyboard */,
@@ -146,6 +149,7 @@
 			files = (
 				4EF48F2D2804E7A500D3907A /* StartViewController.swift in Sources */,
 				4EF48F292804E7A500D3907A /* AppDelegate.swift in Sources */,
+				4EFBC2A828078DA300DFB82A /* VideoViewController.swift in Sources */,
 				4EF48F2B2804E7A500D3907A /* SceneDelegate.swift in Sources */,
 				4EF48F3F2804F05700D3907A /* Dog.swift in Sources */,
 				4EF48F3D2804F01F00D3907A /* DogViewController.swift in Sources */,
