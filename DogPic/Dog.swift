@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import Alamofire
 
-struct Dog: Decodable {
+struct Dog: Codable {
     let fileSizeBytes: Int?
     let url: String?
 }
