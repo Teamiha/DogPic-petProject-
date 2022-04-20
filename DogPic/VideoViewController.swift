@@ -11,7 +11,8 @@ import Alamofire
 
 class VideoViewController: UIViewController {
 
-    let webView = WKWebView()
+    @IBOutlet var webView: WKWebView!
+    //let webView = WKWebView()
     
     var dogURL = "https://www.google.com/"
     
@@ -23,9 +24,6 @@ class VideoViewController: UIViewController {
                 print(rez)
                 guard let test = rez.url else { return }
                 self.dogURL = test
-                print("- - - - - - - - - - - -")
-                print(self.dogURL)
-                print("- - - - - - - - - - - -")
             case .failure(let error):
                 print(error)
             }
@@ -33,19 +31,36 @@ class VideoViewController: UIViewController {
         
         view.addSubview(webView)
         webView.translatesAutoresizingMaskIntoConstraints = false
+        webView.isOpaque = false;
+        webView.backgroundColor = UIColor.black
         
-        NSLayoutConstraint.activate([
-            webView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            webView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            webView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            webView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-            ])
+//        NSLayoutConstraint.activate([
+//            webView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+//            webView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+//            webView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+//            webView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+//            ])
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.loadRequest()
-        }
+
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+//            self.loadRequest()
+//        }
 //        loadRequest()
     }
+    
+    @IBAction func reload(_ sender: Any) {
+        fetchData("https://random.dog/woof.json") { i in
+            switch i {
+            case .success(let rez):
+                print(rez)
+                guard let test = rez.url else { return }
+                self.dogURL = test
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
     
     private func loadRequest() {
         guard let url = URL(string: dogURL) else { return }
@@ -62,6 +77,7 @@ class VideoViewController: UIViewController {
                 switch dataResponse.result {
                 case .success(let rez):
                     completion(.success(rez))
+                    self.loadRequest()
                     print(rez)
                 case .failure(let error):
                     print(error)
