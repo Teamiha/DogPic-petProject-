@@ -20,12 +20,7 @@ class StartViewController: UIViewController {
     @IBAction func start() {
     }
     
-    // MARK: - Navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let DogVC = segue.destination as? DogViewController else { return }
-        DogVC.dogData = dogCore
-        fetchDog()
-    }
+    
 
 }
 

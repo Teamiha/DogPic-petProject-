@@ -10,7 +10,8 @@ import WebKit
 import Alamofire
 
 class VideoViewController: UIViewController {
-
+    @IBOutlet var progressBar: UIProgressView!
+    
     @IBOutlet var webView: WKWebView!
     //let webView = WKWebView()
     
@@ -20,10 +21,13 @@ class VideoViewController: UIViewController {
         super.viewDidLoad()
         fetchData("https://random.dog/woof.json") { i in
             switch i {
-            case .success(let rez):
-                print(rez)
-                guard let test = rez.url else { return }
-                self.dogURL = test
+            case .success(let dogPicAdress):
+                print("- - - - - - - - - - -")
+                print(dogPicAdress)
+                print("- - - - - - - - - - -")
+
+                guard let dogPic = dogPicAdress.url else { return }
+                self.dogURL = dogPic
             case .failure(let error):
                 print(error)
             }
@@ -32,27 +36,35 @@ class VideoViewController: UIViewController {
         view.addSubview(webView)
         webView.translatesAutoresizingMaskIntoConstraints = false
         webView.isOpaque = false;
-        webView.backgroundColor = UIColor.black
+        webView.backgroundColor = UIColor.white
         
-//        NSLayoutConstraint.activate([
-//            webView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-//            webView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-//            webView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-//            webView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-//            ])
-        
-
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-//            self.loadRequest()
-//        }
-//        loadRequest()
+        webView.addObserver(self, forKeyPath:
+                        #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
+    
     }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+           if keyPath == "estimatedProgress" {
+               progressBar.progress = Float(webView.estimatedProgress)
+               let progress = progressBar.progress
+               if progress == 1.0 {
+                   progressBar.isHidden = true
+               }
+           }
+       }
+
+    
+    
+
+    
+    
+    
     
     @IBAction func reload(_ sender: Any) {
         fetchData("https://random.dog/woof.json") { i in
             switch i {
             case .success(let rez):
-                print(rez)
+                self.progressBar.isHidden = false
                 guard let test = rez.url else { return }
                 self.dogURL = test
             case .failure(let error):
@@ -60,14 +72,15 @@ class VideoViewController: UIViewController {
             }
         }
     }
-    
+
     
     private func loadRequest() {
         guard let url = URL(string: dogURL) else { return }
         
         let urlRequest = URLRequest(url: url)
-        
         webView.load(urlRequest)
+        lazy var test = webView.estimatedProgress
+        print(test)
     }
  
     func fetchData(_ url: String, completion: @escaping(Result<Dog, AFError>) -> Void) {
@@ -78,7 +91,6 @@ class VideoViewController: UIViewController {
                 case .success(let rez):
                     completion(.success(rez))
                     self.loadRequest()
-                    print(rez)
                 case .failure(let error):
                     print(error)
                 }

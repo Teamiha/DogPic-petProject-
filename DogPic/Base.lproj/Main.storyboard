@@ -61,7 +61,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemGray2Color"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="F6h-Hy-LTj" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3Yj-2l-tm7"/>
                             <constraint firstItem="ySj-VE-scQ" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="7oT-he-fpb"/>
@@ -86,45 +86,6 @@
             </objects>
             <point key="canvasLocation" x="540.57971014492762" y="83.705357142857139"/>
         </scene>
-        <!--Dog View Controller-->
-        <scene sceneID="zYz-br-qgN">
-            <objects>
-                <viewController id="C0m-Ri-g62" customClass="DogViewController" customModule="DogPic" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="TsM-ct-7cN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r2o-7i-0Qp">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="2Dp-Cv-Gtg">
-                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
-                            </activityIndicatorView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="pgd-rO-f29"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="2Dp-Cv-Gtg" firstAttribute="centerY" secondItem="TsM-ct-7cN" secondAttribute="centerY" id="Wk5-Ty-BeV"/>
-                            <constraint firstItem="2Dp-Cv-Gtg" firstAttribute="centerX" secondItem="TsM-ct-7cN" secondAttribute="centerX" id="eU6-wU-3pJ"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="Hsa-Xi-sTj">
-                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="icf-sA-Mex">
-                            <connections>
-                                <action selector="reload:" destination="C0m-Ri-g62" id="tOg-vI-J8M"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="activity" destination="2Dp-Cv-Gtg" id="naA-9V-fFL"/>
-                        <outlet property="dogImage" destination="r2o-7i-0Qp" id="RLt-I0-YQe"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tep-2Y-qXD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2410" y="185"/>
-        </scene>
         <!--Title-->
         <scene sceneID="aPg-7E-hAF">
             <objects>
@@ -141,6 +102,10 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="edC-On-DVk">
+                                <rect key="frame" x="0.0" y="88" width="414" height="4"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KwG-HD-pbQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -159,12 +124,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="progressBar" destination="edC-On-DVk" id="qO6-5q-Vit"/>
                         <outlet property="webView" destination="L4a-f8-5SN" id="hst-U8-gzW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yS0-X4-twp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1335" y="84"/>
+            <point key="canvasLocation" x="1334.7826086956522" y="83.705357142857139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="PLm-tV-u90">
@@ -199,9 +165,6 @@
         <image name="dog2" width="512" height="512"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
